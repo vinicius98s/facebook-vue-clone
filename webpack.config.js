@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: ["./src/app.js"],
+  entry: ["./src/main.js"],
   devServer: {
     hot: true,
     watchOptions: {
@@ -19,7 +19,17 @@ module.exports = {
       { test: /\.css$/, use: ["vue-style-loader", "css-loader"] },
       {
         test: /\.s[ac]ss$/i,
-        use: ["vue-style-loader", "css-loader", "sass-loader"]
+        use: [
+          "vue-style-loader",
+          "css-loader",
+          "sass-loader",
+          {
+            loader: "sass-resources-loader",
+            options: {
+              resources: ["./src/scss/variables.scss"]
+            }
+          }
+        ]
       },
       { test: /\.js$/, use: "babel-loader" },
       { test: /.*\.(gif|png|jpe?g)$/i, use: "file-loader" }
