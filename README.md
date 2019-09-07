@@ -13,7 +13,7 @@ Em seguida rodar o servidor:<br>
 
 `yarn dev` ou `npm run dev`<br>
 
-Em seguida basta abrir o navegador com a url: `htpp://localhost:8080`
+Em seguida basta abrir o navegador com a url: `http://localhost:8080`
 
 ### Preview da interface
 
